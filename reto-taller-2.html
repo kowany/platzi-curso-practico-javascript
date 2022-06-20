@@ -5,6 +5,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Reto taller 2 | Descuentos con cupones</title>
+ <link rel="stylesheet" href="./reto-taller-2.css">
 </head>
 <body>
  <header>
@@ -17,8 +18,16 @@
   <form action="">
    <label for="InputPrice">Escribe el precio de tu producto:</label>
    <input id="InputPrice" type="number">
-   <label for="InputCoupon">Escribe el cupón de descuento para tu producto:</label>
-   <input id="InputCoupon" type="text" />
+   <!-- <label for="InputCoupon">Escribe el cupón de descuento para tu producto:</label>
+    <input id="InputCoupon" type="text" /> -->
+    <!-- <h2>Seleccionar el cupón de descuento</h2> -->
+    <label for="coupon">Seleccionar el cupón de descuento:</label>
+    <select name="coupon" id="coupon">
+      <!-- <option value="" disabled selected>Seleccione una Figura...</option> -->
+      <!-- <option value="circulo">Círculo</option>
+      <option value="cuadrado">Cuadrado</option>
+      <option value="triangulo">Triángulo</option> -->
+    </select>
    <!-- <button type="button" onclick="calcularPrecio()">calcular</button> -->
    <button type="button" onclick="calculaPrecioConDescuentoPorCupon()">Calcular el precio con descuento por cupón</button>
    <p id="resultPrice"></p>

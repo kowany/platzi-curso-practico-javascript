@@ -1,5 +1,29 @@
+async function calculaVan() {
+ const valoresIngresos = document.querySelector('#InputIncomes').value;
+ const valoresEgresos = document.querySelector('#InputExpenses').value;
+ const result = document.querySelector('#result');
+ 
+ const listaIngresos = await listado(valoresIngresos);
+ const listaEgresos = await listado(valoresEgresos);
+ 
+ const tasaInteres = Number(document.querySelector('#InputInterest').value)/100;
+ const inversionInicial = Number(document.querySelector('#InputInvestment').value)*(-1);
+
+ result.textContent = `El valor del Valor Actual Neto (VAN) es: ${flujoEfectivoNeto(listaIngresos, listaEgresos, inversionInicial, tasaInteres)}`;
+}
 
 
+function listado(lista) {
+ let listaString = lista.split(',');
+
+ const numerosLista = [];
+
+ listaString.forEach(element => {
+  numerosLista.push(Number(element.trim()));
+ });
+
+ return numerosLista;
+}
 
 function flujoEfectivoNeto(flujoIngreso, flujoEgreso, inversionInicial, interes) {
 
@@ -9,10 +33,10 @@ function flujoEfectivoNeto(flujoIngreso, flujoEgreso, inversionInicial, interes)
  }
  let flujoNeto = [];
  for ( let i = 0; i < flujoIngreso.length; i++ ) {
-  flujoNeto[i] = (flujoIngreso[i] - flujoEgreso[i])/(Math.pow((1.1), i + 1));
+  flujoNeto[i] = (flujoIngreso[i] - flujoEgreso[i])/(Math.pow((1 + interes), i + 1));
  }
  console.log('flujo neto: ', flujoNeto);
- return neto = flujoNeto.reduce( (accum, item) => accum + item, inversionInicial);
+ return neto = flujoNeto.reduce( (accum, item) => accum + item, inversionInicial).toFixed(2);
 }
 
 console.log(flujoEfectivoNeto(

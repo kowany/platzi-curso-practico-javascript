@@ -1,7 +1,6 @@
 # platzi-curso-practico-javascript
 Ejemplos del curso práctico de javascript
 
-
 ## Taller número 1: figuras geométricas
 
 - Primer paso: definir las fórmulas

@@ -4,9 +4,20 @@ const coupons = [
  "es_un_secreto",
 ];
 
+var select = document.getElementById("coupon");
+coupons.forEach( (coupon, index) => {
+  option = document.createElement("option");
+  option.value = coupon;
+  option.text = coupon;
+  select.append(option);
+})
+
 function calculaPrecioConDescuentoPorCupon() {
  const price = document.getElementById('InputPrice').value;
- const coupon = document.getElementById('InputCoupon').value;
+ var selectedOption = select.options[select.selectedIndex];
+ const coupon = selectedOption.value;
+//  const coupon = document.getElementById('InputCoupon').value;
+//  const coupon = document.getElementById('InputCoupon').value;
  const result = document.getElementById('resultPrice');
  // const discount = obtenerDescuentoPorCupon(coupon); // Solución # 1
  // const discount = descuentoPorCuponRevisandoQueExisteEnElArray(coupon); //Solución # 2

@@ -5,8 +5,51 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Cálculo de la VAN de un proyecto</title>
+ <link rel="stylesheet" href="./van.css">
 </head>
 <body>
+ <section>
+  <h1>VAN</h1>
+  <h3>Suma de los flujos de caja anuales actualizados deducido  el valor de la inversión</h3>
+  <p>
+   Si a los flujos de caja (cobros - pagos) le llamamos:     Q1, Q2,...,Qn
+ 
+    a la tasa de descuento seleccionada:  k
+ 
+       y al desembolso inicial:    A
+    
+    siendo:
+    
+    Q1, Q2,Q3 =  5.000, 8.000, 10.000
+    
+    k =  5%  (1)
+    
+    A  =  20.000
+    
+    tendremos:}
+
+  </p>
+  <form action="">
+   
+   <label for="InputIncomes">Escribe la lista de ingresos (introducir valores separados por coma):</label>
+   <input id="InputIncomes" type="text" placeholder="200, 500, 400, 900" autocomplete="off">
+   
+   <label for="InputExpenses">Escribe la lista de egresos (introducir valores separados por coma):</label>
+   <input id="InputExpenses" type="text" placeholder="200, 500, 400, 900" autocomplete="off">
+   
+   
+   <label for="InputInterest">Escribe la tasa de interés:</label>
+   <input id="InputInterest" type="number">
+   
+   <label for="InputInvestment">Escribe la inversión inicial:</label>
+   <input id="InputInvestment" type="number">
+
+
+   
+   <button type="button" onclick="calculaVan()">Calcular la VAN</button>
+   <p id="result"></p>
+  </form>
+ </section>
  <script src="./van.js"></script>
 </body>
 </html>
